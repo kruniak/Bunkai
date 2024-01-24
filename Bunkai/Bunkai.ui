@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>BunkaiClass</class>
+ <widget class="QMainWindow" name="BunkaiClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Bunkai</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="maximumSize">
+    <size>
+     <width>1280</width>
+     <height>665</height>
+    </size>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="disassemblyTab">
+       <attribute name="title">
+        <string>Disassembly</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+         <widget class="DisassemblyBrowser" name="disassemblyBrowser">
+          <property name="styleSheet">
+           <string notr="true">font: 10pt &quot;Cascadia Code&quot;;
+font-size: 12px;
+color: #FFFFFF;
+background-color: #1E1E1E;
+</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="hexViewTab">
+       <attribute name="title">
+        <string>Hex view</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="HexViewBrowser" name="hexViewBrowser">
+          <property name="styleSheet">
+           <string notr="true">font: 10pt &quot;Cascadia Code&quot;;
+font-size: 12px;
+color: #FFFFFF;
+background-color: #1E1E1E;
+</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1280</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionOpen"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="separator"/>
+  </widget>
+  <action name="actionOpen">
+   <property name="text">
+    <string>Open...</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>DisassemblyBrowser</class>
+   <extends>QTextBrowser</extends>
+   <header>disassemblybrowser.h</header>
+  </customwidget>
+  <customwidget>
+   <class>HexViewBrowser</class>
+   <extends>QListView</extends>
+   <header>hexviewbrowser.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="Bunkai.qrc"/>
+ </resources>
+ <connections/>
+</ui>
